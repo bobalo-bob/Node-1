@@ -4,7 +4,7 @@ THis unique trap is checking if your wallet address receives needed tekens sum a
 
 ## This trap could be used for:
 
-- For expected sender income;  Your friend sends 0.00005 ETH and this is your expectation; 
+- For expected sender income;  Your friend sends 0.0005 ETH and this is your expectation; 
 - Monitoring if you are not waiting for such an amount from that address;
 - Verification of payment - you know when that amount is paid.
 
@@ -13,7 +13,7 @@ THis unique trap is checking if your wallet address receives needed tekens sum a
    - Compile the contract with drosera build.
    - Apply the configuration with drosera apply.
    - Start your operator and monitor the dashboard/logs.
-When the target wallet receives 0.00005 ETH, the trap will trigger and show a dark green block in the dashboard.
+When the target wallet receives 0.0005 ETH, the trap will trigger and show a dark green block in the dashboard.
 
 ## LogAlertReceiver
 
@@ -48,7 +48,7 @@ contract IncomingFromSpecificSenderTrap is ITrap {
     address public constant target = YOUR_WALLET_HERE; // your wallet address 0x.......
     address public constant senderFilter = WALLET_WHICH_SENDS_TO_YOU; // this sender only address wallet 0x.......
 
-    uint256 public constant minAmount = 0.00005 ether; // incoming transfer amount
+    uint256 public constant minAmount = 0.0005 ether; // incoming transfer amount
 
     function collect() external view override returns (bytes memory) {
         return abi.encode(target.balance);
